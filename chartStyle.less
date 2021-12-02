@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+@other-bg-color:#eff5fa;
+@chart-height:70vh;
+@chart-width:80vw;
+@chart-border-radius:10px;
+@chart-margin-top: 1rem;
+@chart-fontsize: 1em;
+
+@grid-line-color: #403d40;
+
+@bar-width: 30px;
+@bar-padding: 3px;
+@bar-border: 6px;
+
+@pie-size: 50vh;
+@pie-radius: 100%;
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d2d6e1;
+}
+
+.card {
+    background: @other-bg-color;
+    width: @chart-width;
+    height: auto;
+    border-radius: @chart-border-radius;
+    margin-top: @chart-margin-top;
+    
+    .heading {
+        font-size: @chart-fontsize;
+        text-align: center;
+        margin-top: 0.75rem;
+    }
+}
+
+.grid {
+    position: relative;
+    margin: auto;
+    padding: 5px 0px 5px 0px;
+    height: 50%;
+    width: 60%;
+    border-left: 3px solid @grid-line-color;
+    border-bottom: 2px solid @grid-line-color;
+
+    background: repeating-linear-gradient(
+        90deg,
+        transparent, transparent 20%
+        fadeout(@grid-line-color, 30%) 20%
+    );
+
+}
+
+.barmale {
+    width: var(--bar-value);
+    height: @bar-width;
+    margin: @bar-padding 0;
+    background-color: #433dff;
+    border-radius: 0 @bar-border @bar-border 0;
+    &::after {
+        font-size: 0.75em;
+        font-weight: bold;
+        content: attr(data-name);
+        padding: 15px;
+        display: inline-block;
+        white-space: nowrap;
+        margin-left: 100%;
+    }
+
+}
+
+.barfemale {
+    width: var(--bar-value);
+    height: @bar-width;
+    margin: @bar-padding 0;
+    background-color: #ff56a2;
+    border-radius: 0 @bar-border @bar-border 0;
+    &::after {
+        font-size: 0.75em;
+        font-weight: bold;
+        content: attr(data-name);
+        padding: 15px;
+        display: inline-block;
+        white-space: nowrap;
+        margin-left: 100%;
+
+}
+}
+
+.agemin {
+    position: absolute;
+    top: 100%;
+
+}
+
+.agemax {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+
+}
+
+.keys {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.survive-key {
+    background: #069f5f;
+    width: 15px;
+    height: 15px;
+    margin: 10px 10px;
+    border: 0.5px solid #000;
+    &::after {
+        margin-left: 100%;
+        content: 'Survived';
+    }
+}
+
+.dead-key {
+    position: relative;
+    background: #ab3b44;
+    width: 15px;
+    height: 15px;
+    margin: 10px 10px;
+    border: 0.25px solid #000;
+    &::after {
+        position: absolute;
+        margin-left: 100%; 
+        content: 'Dead';
+        left: 5px;
+    }
+}
+
+.pie-chart {
+    background: conic-gradient(#069f5f 38.2%, #ab3b44 38.2%);
+    max-width: @pie-size;
+    height: @pie-size;
+    border-radius: @pie-radius;
+    margin: auto;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.surv-slice {
+    position: relative;
+    top: 40%;
+    left: 60%;
+    color: #000;
+}
+
+.dead-slice {
+    position: relative;
+    top: 50%;
+    left: 25%;
+    color: #fff;
+}
+
+.s-key {
+    background: #ffc281;
+    width: 15px;
+    height: 15px;
+    margin: 10px 10px;
+    border: 0.5px solid #000;
+    &::after {
+        margin-left: 100%;
+        content: 'S';
+        margin-left: 100%;
+        left:  5px;
+    }
+
+}
+
+.c-key {
+    background: #fd8a43;
+    width: 15px;
+    height: 15px;
+    margin: 10px 10px;
+    border: 0.5px solid #000;
+    &::after {
+        margin-left: 100%;
+        content: 'C';
+        margin-left: 100%;
+        left: 5px;
+    }
+
+}
+
+.q-key {
+    background: #f0b102;
+    width: 15px;
+    height: 15px;
+    margin: 10px 10px;
+    border: 0.5px solid #000;
+    &::after {
+        margin-left: 100%;
+        content: 'Q';
+        margin-left: 100%;
+        left: 5px;
+    }
+
+}
+
+.null-key {
+    background: #fff;
+    width: 15px;
+    height: 15px;
+    margin: 10px 10px;
+    border: 0.5px solid #000;
+    &::after {
+        margin-left: 100%;
+        content: 'Null';
+        margin-left: 100%;
+        left: 5px;
+    }
+
+}
+
+.pie-chart2 {
+    background: conic-gradient(#ffc281 0% 69.8%, #fd8a43 69.8% 90.4% , #f0b102 90.4% 99.8% , #fff 99.8% 100%);
+    max-width: @pie-size;
+    height: @pie-size;
+    border-radius: @pie-radius;
+    margin: auto;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.s-slice {
+    position: relative;
+    top: 45%;
+    left: 60%;
+}
+
+.c-slice {
+    position: relative;
+    top: 35%;
+    left: 20%;
+}
+
+.q-slice {
+    position: relative;
+    top: 7%;
+    left: 37%;
+    
+}
+
+.male-key {
+    background: #433dff;
+    width: 15px;
+    height: 15px;
+    margin: 10px 10px;
+    border: 0.5px solid #000;
+    &::after {
+        margin-left: 100%;
+        content: 'Male';
+        margin-left: 100%;
+        left: 5px;
+    }
+}
+
+.female-key {
+    background: #ff56a2;
+    width: 15px;
+    height: 15px;
+    margin: 10px 10px;
+    border: 0.5px solid #000;
+    &::after {
+        margin-left: 100%;
+        content: 'Female';
+        margin-left: 100%;
+        left: 5px;
+    }
+}
+
+.pie-chart3 {
+    background: conic-gradient(#433dff 0% 64.4%, #ff56a2 64.4% 100%);
+    max-width: @pie-size;
+    height: @pie-size;
+    border-radius: @pie-radius;
+    margin: auto;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.male-slice {
+    position: relative;
+    top: 50%;
+    left: 60%;
+
+
+}
+
+.female-slice {
+    position: relative;
+    top: 35%;
+    left: 25%;
+
+}
+
+.grid2 {
+    position: relative;
+    margin: auto;
+    padding: 5px 0px 5px 0px;
+    height: 50%;
+    width: 60%;
+    border-left: 3px solid @grid-line-color;
+    border-bottom: 2px solid @grid-line-color;
+
+    background: repeating-linear-gradient(
+        90deg,
+        transparent, transparent 20%
+        fadeout(@grid-line-color, 30%) 20%
+    )
+
+}
+
+.gendermin {
+    position: absolute;
+    top: 100%;
+}
+
+.gendermax {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+}

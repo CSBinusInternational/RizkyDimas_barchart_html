@@ -7,8 +7,9 @@
 </head>
 <body>
     <h1>Titanic Tragedy Information</h1>
+    <div class="card">
     <div class="Demographic-chart">
-        <h2>Demographic of Titanic Passengers</h2>
+        <h2 class="heading">Demographic of Titanic Passengers</h2>
         <div class="grid">
             <div class="agemin">0</div>
             <div class="agemax">240</div>
@@ -54,25 +55,58 @@
             </div>
         </div>
     </div>
-    <h2>Data of Survived and Dead</h2>
+    </div>
+
+    <div class="card">
+    <h2 class="heading">Data of Survived and Dead</h2>
+    <div class="keys">
+        <div class="survive-key"></div>
+        <div class="dead-key"></div>
+    </div>
     <div class="Survived and Dead">
-        <div class="surv-pie"></div>
+        <div class="pie-chart">
+            <div class="surv-slice">38.2%</div>
+            <div class="dead-slice">61.8%</div>
+        </div>
+    </div>
+    </div>
+
+    <div class="card">
+    <h2 class="heading">Data of Embarked Passengers</h2>
+    <div class="keys">
+        <div class="s-key"></div>
+        <div class="c-key"></div>
+        <div class="q-key"></div>
+        <div class="null-key"></div>
+    </div>
+    <div class="Embarked-pie-chart">
+        <div class="pie-chart2">
+            <div class="s-slice">69.8%</div>
+            <div class="c-slice">20.6%</div>
+            <div class="q-slice">9.4%</div>
+            <div class="null-slice"></div>
+        </div> 
 
     </div>
-    <h2>Data of Embarked Passengers</h2>
-    <div class="Embarked-chart">
-
     </div>
-    <h2>Gender Comparison of Passengers</h2>
-    <div class="gender-pie">
 
+    <div class="card">
+    <h2 class="heading">Gender Comparison of Passengers</h2>
+    <div class="keys">
+        <div class="male-key"></div>
+        <div class="female-key"></div>
     </div>
-    <div class="gender-hor-chart">
+    <div class="pie-chart3">
+        <div class="male-slice">64.4%</div>
+        <div class="female-slice">35.5%</div>
+    </div>
+    <div class="gender-hori-chart">
         <div class="grid2">
             <div class="gendermin">0</div>
             <div class="gendermax">1000</div>
-            <div class="barmale" style="" data-name=""></div>
-            <div class="barfemale" style="" data-name=""></div>
-            </div>
+            <div class="barmale" style="--bar-value:84.3%" data-name="Male"></div>
+            <div class="barfemale" style="--bar-value:46.6%" data-name="Female"></div>
         </div>
+    </div>
+    </div>
 </body>
